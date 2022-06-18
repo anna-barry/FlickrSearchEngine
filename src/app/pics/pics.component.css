@@ -1,0 +1,12 @@
+.pictures {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 1000px;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.pic img{
+    max-width: 250px;
+    max-height: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
