@@ -20,16 +20,6 @@ export class PicsComponent implements OnInit, OnDestroy {
     {
       this.firstpicts = response;
     });
-    /*.subscribe((response: any) => {
-      //console.log('Data', response);
-      //console.log(response.photos.photo)
-      //let i = 0;
-      for (const pic of response.photos.photo) {
-        let sentence = "https://live.staticflickr.com/"+pic.server+"/"+pic.id+"_"+pic.secret+".jpg";
-        this.firstpicts.push(sentence);
-      
-      }
-    });*/
   }
 
   ngOnDestroy(): void {

@@ -1,4 +1,9 @@
 <div class="search">
     <h4>Search for images</h4>
-    <input type="text" placeholder="Search for Image" #pic (keyup.enter)="search(pic.value)" >
+    <input id="search1" type="text" placeholder="Search for Image" #pic (keyup.enter)="search(pic.value)" >
+    <h3>Filters</h3>
+    <div class="Min_Upload_Date">
+    <h6>Min upload date </h6>
+    <input type="text" placeholder="YYYY-MM-DD hh:mm:ss" #pic2 (keyup.enter)="setMinuploaddate(pic2.value)" >
+    </div>
 </div>
