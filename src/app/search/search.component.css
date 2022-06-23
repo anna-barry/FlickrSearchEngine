@@ -1,5 +1,5 @@
 .search {
-    max-width: 600px;
+    max-width: 700px;
     margin: 30px auto;
     text-align: center;
     font-size: 18px;
@@ -15,12 +15,44 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #89ceeb;
 }
-.search h3 {
+.filter h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #89adeb;
     text-align: left;
-    vertical-align:bottom;
-    margin-top: 10px;
+    margin-top: 70px;
+    vertical-align: bottom;
+    
+}
+.actualsearch i{
+    align-items: top;
+    align-self: top;
+}
+.actualsearch button{
+    float: left;
+    width: 40px;
+    height: 35px;
+    padding: 10px;
+    margin-top: 18px;
+    background: #89ceeb;
+    color: white;
+    font-size: 17px;
+    border: 1px solid white;
+    border-left: none; /* Prevent double borders */
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.actualsearch input {
+    width: 80%;
+    margin-top: 20px;
+    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.actualsearch
+{
+     align-items: baseline 
 }
 .Min_Upload_Date
 {
@@ -31,5 +63,53 @@
     text-align: left;
 }
 .Min_Upload_Date { text-align: left;}
-.Min_Upload_Date > h6 { display: inline-block; text-align: left;}
-.Min_Upload_Date input { max-width: 200px; margin-left: 10px; }
+.Min_Upload_Date > h6 { display: inline-block; text-align: left; margin-left: 10px;}
+.Min_Upload_Date input { max-width: 130px; margin-left: 10px; }
+
+.extraCheckBox
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style:normal;
+    text-align: left;
+}
+
+
+.extraCheckBox h6
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    text-align: left;
+}
+.extraCheckBox label
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.tri
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style:normal;
+    font-size: 16px;
+    max-width: 160px;
+}
+
+.tri h4
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #217295;
+    margin-left: 5px;
+}
+.tri label
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-left: 5px;
+}

@@ -13,7 +13,7 @@ export class DataService {
 
   getSomeImages()
   {
-    return this.http.get(' https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=098c9063a6acb12615655508f6e6586d&text=landscape&per_page=100&page=1&format=json&nojsoncallback=1')
+    return this.http.get(' https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=098c9063a6acb12615655508f6e6586d&text=landscape&sort=relevance&per_page=100&page=1&format=json&nojsoncallback=1')
     .subscribe((response: any)=> {
       //this.firstpicts.next(response.data);
       let current = [];
@@ -39,14 +39,49 @@ export class DataService {
     });
   }
 
-  searchImage_Param(ImageName: string, minupload_date: string)
+  searchImage_Param(ImageName: string, minupload_date: string, maxupload_date: string, date_posted_asc: boolean,
+    date_posted_desc: boolean,
+    date_taken_asc: boolean,
+    date_taken_desc: boolean,
+    relevance: boolean,
+    tags: string,
+    is_gallery: boolean,
+    NSFW: boolean )
   {
+    console.log(NSFW)
     let sentence = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+
     "098c9063a6acb12615655508f6e6586d&text="+ImageName;
 
     if (minupload_date !== '')
-      sentence += "&min_upload_date="+minupload_date
+      sentence += "&min_upload_date="+minupload_date;
+
+    if (maxupload_date !== '')
+      sentence += "&max_upload_date="+maxupload_date;
+
+    if (tags !== '')
+      sentence += "&tags="+tags;
+
+    if (is_gallery)
+      sentence += "&in_gallery=true";
+
+    if (NSFW)
+      sentence += "&safe_search=3";
+
+    if (date_posted_asc)
+      sentence += "&sort=date-posted-asc";
     
+    if (date_posted_desc)
+      sentence += "&sort=date-posted-desc";
+    
+    if (date_taken_asc)
+      sentence += "&sort=date-taken-asc";
+
+    if (date_taken_desc)
+      sentence += "&sort=date-taken-desc";
+
+    if (relevance)
+      sentence += "&sort=relevance";
+
     sentence += "&per_page=50&page=1&format=json&nojsoncallback=1";
 
     return this.http.get(sentence)

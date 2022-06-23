@@ -1,9 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="search">
     <h4>Search for images</h4>
-    <input id="search1" type="text" placeholder="Search for Image" #pic (keyup.enter)="search(pic.value)" >
+    <div class="actualsearch">
+    <input id="search1" type="text" placeholder="Search for Image" #pic (keyup)="search(pic.value)" >
+    <button class="btn" (click)="searchAll()" > <i class="fa fa-search"></i> </button>
+    </div>
+    <div class="filter">
     <h3>Filters</h3>
+    </div>
     <div class="Min_Upload_Date">
     <h6>Min upload date </h6>
-    <input type="text" placeholder="YYYY-MM-DD hh:mm:ss" #pic2 (keyup.enter)="setMinuploaddate(pic2.value)" >
+    <input type="text" placeholder="YYYY-MM-DD hh:mm:ss" #pic2 (keyup)="setMinuploaddate(pic2.value)" >
+    <h6>Max upload date </h6>
+    <!-- keyup.enter -->
+    <input type="text" placeholder="YYYY-MM-DD hh:mm:ss" #pic3 (keyup)="setMaxuploaddate(pic3.value)" >
+    <div class="extraCheckBox">
+    <h6>Additional Tags</h6>
+    <input type="text" placeholder="tag1,tag2" #pic4 (keyup)="setTags(pic4.value)" >
+    <h6>In Gallery</h6>
+    <input type="checkbox" name="fluency" id="gallery" unchecked (click)="isgallery()"/>
+    <h6>Is NSFW</h6>
+    <input type="checkbox" name="fluency" id="nsfw" checked (click)="isnsfw()"/>
     </div>
+   
+</div>
+</div> 
+<div class="tri">
+    <h4>Sort Pictures</h4>
+    <label for="language">Date posted asc</label>
+    <input type="checkbox" name="fluency" id="sort_posted_asc" unchecked (click)="Date_posted_asc()"/>
+    <label for="language">Desc</label>
+    <input type="checkbox" name="fluency" id="sort_posted_desc" unchecked (click)="Date_posted_desc()"/>
+    <label for="language">Date taken asc</label>
+    <input type="checkbox" name="fluency" id="sort_date_taken_asc" unchecked (click)="date_taken_asc_fn()"/>
+    <label for="language">Desc</label>
+    <input type="checkbox" name="fluency" id="sort_date_taken_desc" unchecked (click)="date_taken_desc_fn()"/>
+    <label for="language">Relevance</label>
+    <input type="checkbox" name="fluency" id="sort_relevance" unchecked (click)="relevance_fn()"/>
 </div>
