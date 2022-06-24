@@ -102,14 +102,14 @@ export class SearchComponent implements OnInit {
     if (searchTerm !== '')
     {
       this.text_search = searchTerm;
-      this.dataService.searchImage_Param(this.text_search, this.minupload_date, this.maxupload_date, this.date_posted_asc,
+      /*this.dataService.searchImage_Param(this.text_search, this.minupload_date, this.maxupload_date, this.date_posted_asc,
         this.date_posted_desc,
         this.date_taken_asc,
         this.date_taken_desc,
         this.relevance,
         this.tags,
         this.is_gallery,
-        this.NSFW);
+        this.NSFW);*/
     }
   }
 
