@@ -1,5 +1,5 @@
 <div class="pictures">
     <div class="pic" *ngFor="let pic of firstpicts">
-        <img [src]=pic alt="Image">
+        <img [src]=pic alt="Image" (click)="PopUp(pic)">
     </div>
 </div>

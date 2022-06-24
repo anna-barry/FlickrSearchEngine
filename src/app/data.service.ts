@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   firstpicts = new BehaviorSubject<any>([]);
+  infopicts = new BehaviorSubject<any>([]);
 
   constructor(private http: HttpClient) { }
 
@@ -48,7 +49,6 @@ export class DataService {
     is_gallery: boolean,
     NSFW: boolean )
   {
-    console.log(NSFW)
     let sentence = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+
     "098c9063a6acb12615655508f6e6586d&text="+ImageName;
 
@@ -64,7 +64,7 @@ export class DataService {
     if (is_gallery)
       sentence += "&in_gallery=true";
 
-    if (NSFW)
+    if (!NSFW)
       sentence += "&safe_search=3";
 
     if (date_posted_asc)
@@ -96,9 +96,29 @@ export class DataService {
     });
   }
 
+  async search_for_info(sentence: string)
+  {
+    return this.http.get(sentence)
+    .subscribe((response: any)=> {
+      this.infopicts.next(response.photo);
+    });
+  }
+
+  async testing_search(sentence: string)
+  {
+    const response = await fetch(sentence);
+    const body = await response.json();
+    return body;
+  }
+  
   getPics()
   {
     return this.firstpicts.asObservable();
+  }
+
+  getInfo()
+  {
+    return this.infopicts.asObservable();
   }
 
 
